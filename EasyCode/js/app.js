@@ -60,7 +60,7 @@ document.write(str + "<br>" + "<br>" );
 
 document.write("Вторая задача" + "<br>") ;
 let numb = prompt("Введите число");
-numb = parseInt(prompt);
+numb = parseInt(numb);
 
 // console.log(numb);
 if (typeof numb != "string") {
