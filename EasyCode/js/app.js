@@ -1,60 +1,82 @@
-// Строки
-    document.write("Задание строки" + "<br>");
-    let string = "some test string";
-    let str  = string;
+/**
+ * Created by користувач on 01.10.18.
+ */
+let object = {
+    product: "iphone",
+};
 
-// 1 Получите первую и последнюю букву строки
-    document.write("первая буква : " + str[0] + " " + "последнюю буква : " + str[str.length-1] + "<br>");
+object.price = 1000;
+object.currency = "dollar";
+object.details = {
+  model: "iPhone X",
+  color: "white"
+};
 
-// 2 Сделать первую и последнюю букву в верхнем регистре
-    document.write("первая буква в верхнем регистре :" + str[0].toUpperCase() + " " + "последняя буква в верхнем регистре : " + str[str.length-1].toUpperCase() + "<br>");
+document.write("Задача обьект" + "<br>" + "<br>");
 
-// 3 найдите положение слова string в строке
-    document.write("Положение слова : " + str.indexOf("string") + "<br>");
+document.write( "Продукт :" + object.product
+                + "<br>" +
+                "Цена :" + object.price
+                + "<br>" +
+                "Модель :" + object.details.model
+                + "<br>" +
+                "Цвет :" + object.details.color );
 
-// 4 найти положение 2 пробела
-    document.write("Положение 2 пробела : " + str.lastIndexOf(" ") + "<br>");
 
-// 5 получите строку с 5 символа длиной 4 буквы
-    document.write("C 5-го символа по 4 буквы : " + str.substr(5,4) + "<br>");
+document.write("<br>" + "<br>" + "Задача присвоение" + "<br>" + "<br>");
 
-//6 получите строку с 5 по 9 символ
-    document.write("C 5-го символа по 9 символ : " + str.slice(5,9) + "<br>");
+document.write("a += 10"
+               + "<br>"+
+               "b *= 18"
+               + "<br>"+
+               "c -= 10"
+               + "<br>"+
+               "x += a"
+               + "<br>"+
+               "y *= z");
 
-//7 получить строку без последних 6-и символов
-    document.write("Без последних 6-и : " + str.slice(0,-6) + "<br>");
+//можно молучить квадрат так
+//  n *= n;
+let n = 4;
+// либо так  ;
+Math.pow(n,2);
 
-// 8 из двух переменых a b получить переменую string = "2016"
-    let a = 20;
-    let b = 16;
-    string = "" + a + b;
-    document.write("Переменная string : " + string + "<br>" + "<br>");
+document.write("<br>" + Math.pow(n,2));
 
-// Числа
-    document.write("Задание Числа" + "<br>");
+document.write("<br>" + "<br>" + "Задача обьект" + "<br>" + "<br>");
 
-// 1 найти число pi  и округлить его до 2 символов после запятой
-    document.write("PI : " + Math.PI
-                    + "<br>" +
-                   "2 characters : " + " " + Math.PI.toFixed(2));
+document.write("Первая задача" + "<br>") ;
 
-// 2 Найти максимальное и минимальное число
-    let max = Math.max = (15, 11, 16, 12, 51, 12, 13, 51);
-    let min = Math.min(15, 11, 16, 12, 51, 12, 13, 51);
-    document.write("<br>" + "Max : " + max + " " + "Min : " + min +"<br>");
+let str = prompt("Напишите hidden или visible");
 
-// 3 работа с Math.random
-    let random_x = Math.random(0) + "x";
-    document.write("Случайное число с 2 цыфрами после запятой : " + Math.random().toFixed(2)
-                    + "<br>" +
-                   "Случайное число от 0 до Х : " + random_x + "<br>");
-// 4 проверить результат вычисление и привести с нормальному виду
-    let x = 0.6 + 0.7;
-    document.write("Значение вычисления : " + x + "<br>");
-    x = x.toFixed(1);
-    document.write("Нормальный вид :" + x + "<br>");
+if (str == "hidden"){
+    str = "visible"
+}else if (str != "hidden" && str != "visible") {
+    str = "Попробуйте еще раз что то не так "
+}else {
+    str = "hidden"
+}
+document.write(str + "<br>" + "<br>" );
 
-// 5 получить число из строки
-    document.write("Число из строки 100$ : " + parseInt("100$"));
+document.write("Вторая задача" + "<br>") ;
+let numb = prompt("Введите число");
+numb = parseInt(prompt);
+
+// console.log(numb);
+if (typeof numb != "string") {
+
+    if (numb == 0) {
+        numb = 1;
+    } else if (numb < 0) {
+        numb = "less then zero"
+    } else {
+        numb *= 10;
+    }
+}
+ else {
+    numb = "Ошибка вы ввели не число "
+}
+
+document.write(numb);
 
 
