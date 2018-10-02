@@ -1,0 +1,15 @@
+.header{
+
+  @include e(title){
+    font-size: 25px;
+  }
+
+  @include e(sybtitle){
+    font-size: 15px;
+
+    span{
+      font-size: 20px;
+    }
+  }
+
+}

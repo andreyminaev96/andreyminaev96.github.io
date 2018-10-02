@@ -1,0 +1,28 @@
+.header{
+  width: 100%;
+  padding: 10px 0;
+
+  @include e(content){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @include e(title){
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  @include e(sybtitle){
+    font-weight: 400;
+    font-size: 12px;
+
+    span{
+      font-weight: 700;
+      font-size: 15px;
+      padding-right: 5px;
+    }
+  }
+
+}

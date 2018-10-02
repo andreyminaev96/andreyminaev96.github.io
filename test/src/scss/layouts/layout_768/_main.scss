@@ -1,0 +1,12 @@
+.main-content {
+  flex-direction: row;
+
+  @include e(left-content){
+    width: 50%;
+  }
+
+  @include e(right-content){
+    width: 50%;
+  }
+
+}

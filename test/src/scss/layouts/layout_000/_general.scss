@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $baseFontSize;
+}
+
+body {
+
+  font: 13px $fontFamily $fontFamily ;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  .container{
+    max-width: 1080px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+
+  }
+
+
+.headtitle {
+  display: none
+}
+
+img {
+  vertical-align: top;
+}
+
+@font-face {
+  font-family: 'Circe-Regular';
+  src: url('../../../fonts/Circe-Regular.eot');
+  src: local('Circe'), local('Circe-Regular'),
+  url('../../../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../../../fonts/Circe-Regular.woff') format('woff'),
+  url('../../../fonts/Circe-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circe-Bold';
+  src: url('../../../fonts/Circe-Bold.eot');
+  src: local('Circe Bold'), local('Circe-Bold'),
+  url('../../../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../../../fonts/Circe-Bold.woff') format('woff'),
+  url('../../../fonts/Circe-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+input{
+  outline: none;
+}

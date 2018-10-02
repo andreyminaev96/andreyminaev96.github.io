@@ -1,0 +1,13 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  min-height: 80px;
+  align-items: center;
+  text-align: center;
+  a{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+  }
+}
