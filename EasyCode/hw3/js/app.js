@@ -12,11 +12,12 @@ document.write("Первые буквы каждого слова в верзн�
 
 // 2 задание
 str = "tseb eht ma i";
-str_spl = str.split().reverse();
+str_spl = str.split();
 str_new = "";
 
 for (let i = 0; i < str_spl.length; i++){
     str_new += str_spl[i].split("").reverse().join("");
+    console.log(str_new);
 }
 
 document.write("Строка перевертыш : " + str_new + "<br>");
@@ -25,7 +26,7 @@ document.write("Строка перевертыш : " + str_new + "<br>");
 let  i = 10;
 let res = 1;
 
-while (i --){
+while(i--) {
     res *= i + 1;
 }
 
@@ -47,7 +48,6 @@ str_new = "";
 for (let i = 1; i <= 15; i++) {
     if (i % 2) {
         str_new += i + " ";
-        console.log(str_new);
     }
 }
 document.write("Нечетные числа 1 - 15 : " + str_new);
