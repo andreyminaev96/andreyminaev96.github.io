@@ -1,0 +1,108 @@
+.fourth-section{
+  padding-top: 61px;
+  margin-bottom: 129px;
+
+
+  @include e(content){
+    display: flex;
+    //margin-bottom: 72px;
+    margin: 72px 0;
+    transform: translateX(4px);
+  }
+
+  @include e(left-side){
+    display: flex;
+  }
+
+  @include e(left-side-number){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .number{
+      border-radius: 50%;
+      border-width: 1px;
+      border-color:  #00d8d3;
+      border-style: dashed;
+      width: 45px;
+      height: 45px;
+      font-family: $fontFamily;
+      color:  #00d8d3;
+      font-size: 29.92px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      //align-items: center;
+      position: relative;
+      padding-top: 2px;
+
+      &:before{
+        content: '';
+        border-radius: 50%;
+        border-width: 2px;
+        border-color:  #00d8d3;
+        border-style: dashed;
+        width: 57px;
+        height: 57px;
+        position: absolute;
+        top: -7px;
+        left: -7px;
+      }
+    }
+    .line{
+      border-width: 1.8px;
+      border-color:  #00d8d3;
+      border-style: dashed;
+      width: 3px;
+      height: 350px;
+      transform: translateY(5px);
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: -5px;
+        border-radius: 50%;
+        background-color:  #00d8d3;
+        width: 10px;
+        height: 10px;
+      }
+
+    }
+  }
+
+  @include e(left-side-content){
+    transform: translateY(10px) translateX(33px);
+  }
+
+  @include e(left-content-info){
+    font-family: $fontFamily;
+    color:  #3b4759;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 53px;
+  }
+
+  @include e(left-content-text){
+    max-width: 400px;
+    width: 100%;
+    font-family: $fontFamily;
+    color:  #3b4759;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 26px;
+  }
+
+  @include e(right-side){
+    display: flex;
+    transform: translateX(110px);
+  }
+
+  @include e(bottom-content){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+}

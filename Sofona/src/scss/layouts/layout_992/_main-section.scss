@@ -1,0 +1,14 @@
+.main-content {
+
+
+  @include e(left-content-title){
+    font-size: 25px;
+  }
+
+  @include e(left-content-text){
+    font-size: 22px;
+
+  }
+
+
+}
