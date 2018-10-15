@@ -44,118 +44,99 @@
 
 //массивЫ
 
-    let str = strFunction ('bcdaeflmjgkh1');
+    // 1
 
-    function strFunction (str) {
-        let strResult = str.split('').sort().reverse().join('');
-        return strResult
+    function srtSort(str){
+        return str.split('').reverse().join('');
+    }
+    srtSort("mlkjihgfedcba");
+    // 2
+
+    function arrayReverse(arr){
+        let resultArr = arr.sort(function(prev, next){
+            return next - prev;
+        })
+        return resultArr
+    }
+    arrSortReverse([2, 4, 7, 1, -2, 10, -9]);
+    // 3
+
+    function arrNew (arr, item1, item2){
+        return arr.slice(item1, item2 +1);
     }
 
+    arrNew['a', 'b', 'c', 'd', 'e', 'f'], 2, 4);
 
-    let array = arraySort([2,4,7,1,-2,10,-9]);
+    // 4
 
-    function arraySort(array) {
-        let newArray = array.sort(function (prev, next) {
-            return  next - prev
-        });
-        return newArray;
+    let arrayItem1 = ['one', 2, 'three', 4];
+    let arrayItem2 = arrayItem1.concat(arrayItem1);
+
+    // 5
+
+    let arreyItems = [1, 2, 3, 4, 5];
+    arreyItems.splice(2,2);
+
+    // 6
+
+    let  arreyItemsNew = [1, 2, 3, 4, 5];
+    arreyItemsNew .splice(2, 2, 'three', 'fore');
+
+    // 7
+
+    let strArr = ['I', 'am', 'an', 'array'];
+    strArr.splice(3, 0, 'awesome');
+
+    // 8
+
+    let arrSort = [[14, 45], [1], ['a', 'c', 'd']];
+    function sortArr(){
+        return arrSort.sort(function(prev, next){
+            return prev.length - next.length;
+        })
     }
 
+    // 9
 
-    let arrayDuble = newArray(['one', 2, 'three', 4]);
-    function newArray (array) {
+    let arrCopy = arrSort.slice(0);
+    let arrCopyNew = [];
+    arrCopyNew = arrCopy1.concat(arrArr);
 
-        return array.concat(array);
-    }
+    // 10
 
-
-    let list = [1,2,3,4,5];
-    let newList = list.splice(0,2,"three","four");
-
-    const arrayObject = [
-        {
-            cpu:'intel',
-            info:{
-                cores:2,
-                cache:3
-            }},
-        {
-            cpu:'intel',
-            info:{
-                cores:4,
-                cache:4
-            }},
-        {
-            cpu:'intel',
-            info:{
-                cores:1,
-                cache:1
-            }},
-        {
-            cpu:'intel',
-            info:{
-                cores:3,
-                cache:2
-            }},
-        {
-            cpu:'intel',
-            info:{
-                cores:4,
-                cache:2
-            }}
+    const arrObject = [
+        {cpu: 'intel', info: {cores:2, cache:3}},
+        {cpu: 'intel', info: {cores:4, cache:4}},
+        {cpu: 'amd', info: {cores:1, cache:1}},
+        {cpu: 'intel', info: {cores:3, cache:2}},
+        {cpu: 'amd', info: {cores:4, cache:2}}
     ];
+    function sortArr (){
+        return arrObject.sort(function(prev, next){
+            return prev.info.cores - next.info.cores;
+        })
+    }
+    sortArr();
 
-    arrayObject.sort(function (prev,next) {
-        return prev.info.cores - next.info.cores;
-    });
-
+    // 11
 
     const products = [
-
-        {
-            title:'prod1',
-            price:5.2
-        },
-        {
-            title:'prod2',
-            price:0.18
-        },
-        {
-            title:'prod3',
-            price:15
-        },
-        {
-            title:'prod4',
-            price:25
-        },
-        {
-            title:'prod5',
-            price:18.9
-        },
-        {
-            title:'prod6',
-            price:8
-        },
-        {
-            title:'prod7',
-            price: 19
-        },
-        {
-            title:'prod8',
-            price:63
-        },
-
-
+        {title: 'prod1', price: 5.2}, {title: 'prod2', price: 0.18},
+        {title: 'prod3', price: 15}, {title: 'prod4', price: 25},
+        {title: 'prod5', price: 18.9}, {title: 'prod6', price:8},
+        {title: 'prod7', price: 19}, {title: 'prod8', price:63},
     ];
-
-    products.sort(function (prev,next) {
-        // for (let i = 0; i <= products.length; i ++){
-        //
-        // }
-        // prev.price - next. price;
-
-    });
-
+    function filterArrStr(price, itemMina, itemMax){
+        let arrNew = [];
+        for (i = 0; i < price.length; i++) {
+            if(price[i].price > itemMina && price[i].price < itemMax)
+                arrNew.push(price[i]);
+        };
+        return arrNew.sort(function(prev, next){
+            return prev.price - next.price;
+        })
+    }
+    filterArrStr(price, 15, 30);
 
 
 
