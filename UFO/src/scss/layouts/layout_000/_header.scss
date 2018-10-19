@@ -1,0 +1,33 @@
+.header{
+  margin-bottom: 25px;
+
+  @include e(nav){
+    display: flex;
+  }
+
+  @include e(nav-item){
+    font-family: $fontFamily;
+    color:  #e1c2f1;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+
+    &:nth-of-type(1){
+      margin-right: 10px;
+    }
+
+
+    &:nth-of-type(2){
+      margin-left: 10px;
+    }
+    &.router-link-active{
+      border-bottom: 2px solid #e66a64 ;
+      color:  #fbf7e4;
+    }
+
+  }
+
+}

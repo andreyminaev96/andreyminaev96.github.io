@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $baseFontSize;
+}
+
+body {
+
+  font: 16px $fontFamily;
+  display: flex;
+  min-height: 100vh;
+  background: #e5eeee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  .container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    min-height: 496px;
+    background: -webkit-linear-gradient(58deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+    background: -moz-linear-gradient(58deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+    background: -o-linear-gradient(58deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+    background: -ms-linear-gradient(58deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+    background: linear-gradient(32deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+    box-shadow: -1px -1px 49px -3px #d5e0e6;
+
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 400px;
+      height: 125px;
+      box-shadow: -2px 28px 44px -6px #344961;
+      z-index: 0;
+    }
+
+    .wrapper{
+      max-width: 262px;
+      width: 100%;
+      z-index: 2;
+    }
+
+  }
+
+
+img {
+  vertical-align: top;
+}
+
+input{
+  outline: none;
+}
+
+#checkBox{
+  display: none;
+
+  &:checked + .checkBox-item:after{
+    opacity: 1;
+  }
+}
+
+.checkBox-item{
+  //padding-left: 23px;
+  position: relative;
+  cursor: pointer;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    background-color:  #23ae92;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    transform: translateY(3px);
+    //position: relative;
+
+  }
+
+  &:after{
+
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-image: url(../i/check.png);
+    z-index: 2;
+    left: 0;
+    transform: translateY(8px) translateX(3px);
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+
+  }
+
+}
+
+.disabled{
+  pointer-events: none;
+  cursor: default;
+  color: #888;
+}

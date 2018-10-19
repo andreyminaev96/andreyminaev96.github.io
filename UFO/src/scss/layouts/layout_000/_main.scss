@@ -1,0 +1,102 @@
+.main{
+  padding-top: 26px;
+
+  .section-form{
+
+    @include e(item) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 14px;
+
+      //&:nth-of-type(2){
+      //  margin-bottom: 16px;
+      //}
+
+      label{
+        margin-bottom: 8px;
+        color:  #fbf6e4;
+        font-size: 16px;
+        font-weight: 700
+      }
+
+      input{
+        box-sizing: border-box;
+        border: 2px solid rgba(191, 185, 204, 54);
+        background-color:  rgba(229, 238, 238, 0);
+        width: 100%;
+        height: 42px;
+        padding: 0 10px;
+        font-family: $fontFamily;
+        font-size: 12px;
+        color:  #fbf6e4;
+        transition: ease-in-out 0.3s;
+
+        &.has-error{
+          border: 2px solid red;
+        }
+        &.has-great{
+          border: 2px solid green;
+        }
+
+        &:focus{
+          border: 2px solid #23ae92;
+        }
+
+      }
+    }
+
+    @include e(checkBox) {
+      margin-top: 15px;
+
+      label{
+        //font-family: $fontFamily;
+        color:  #fbf6e4;
+        font-size: 13px;
+        font-weight: 700;
+        transform: translateY(3px);
+      }
+
+    }
+
+    @include e(button){
+      background-color:  #23ae92;
+      width: 100%;
+      height: 42px;
+      margin-top: 40px;
+      color:  #fbf6e4;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: $fontFamily;
+      outline: none;
+      cursor: pointer;
+
+      &.join{
+        margin-top: 25px;
+      }
+
+    }
+
+    @include e(forgotPassword){
+      margin-top: 30px;
+      display: block;
+      font-family: $fontFamily;
+      color:  #9894c5;
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: none;
+      padding-bottom: 2px;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        background-color:  rgba(150, 193, 218, 0.15);
+        width: 114px;
+        height: 1px;
+      }
+    }
+
+  }
+
+}

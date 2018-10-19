@@ -1,0 +1,351 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700);html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img,
+embed,
+object,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  vertical-align: top;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font: 16px "Quicksand", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  background: #e5eeee;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  min-height: 496px;
+  background: linear-gradient(32deg, #3023ae 0%, #814ac4 53%, #c86dd7 100%);
+  -webkit-box-shadow: -1px -1px 49px -3px #d5e0e6;
+          box-shadow: -1px -1px 49px -3px #d5e0e6;
+}
+
+.container:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 400px;
+  height: 125px;
+  -webkit-box-shadow: -2px 28px 44px -6px #344961;
+          box-shadow: -2px 28px 44px -6px #344961;
+  z-index: 0;
+}
+
+.container .wrapper {
+  max-width: 262px;
+  width: 100%;
+  z-index: 2;
+}
+
+img {
+  vertical-align: top;
+}
+
+input {
+  outline: none;
+}
+
+#checkBox {
+  display: none;
+}
+
+#checkBox:checked + .checkBox-item:after {
+  opacity: 1;
+}
+
+.checkBox-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkBox-item:before {
+  content: '';
+  display: inline-block;
+  background-color: #23ae92;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.checkBox-item:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 8px;
+  background-image: url(../i/check.png);
+  z-index: 2;
+  left: 0;
+  -webkit-transform: translateY(8px) translateX(3px);
+          transform: translateY(8px) translateX(3px);
+  opacity: 0;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #888;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__nav-item {
+  font-family: "Quicksand", sans-serif;
+  color: #e1c2f1;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+.header__nav-item:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+.header__nav-item:nth-of-type(2) {
+  margin-left: 10px;
+}
+
+.header__nav-item.router-link-active {
+  border-bottom: 2px solid #e66a64;
+  color: #fbf7e4;
+}
+
+.main {
+  padding-top: 26px;
+}
+
+.main .section-form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.main .section-form__item label {
+  margin-bottom: 8px;
+  color: #fbf6e4;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.main .section-form__item input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #bfb9cc;
+  background-color: rgba(229, 238, 238, 0);
+  width: 100%;
+  height: 42px;
+  padding: 0 10px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 12px;
+  color: #fbf6e4;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+.main .section-form__item input.has-error {
+  border: 2px solid red;
+}
+
+.main .section-form__item input.has-great {
+  border: 2px solid green;
+}
+
+.main .section-form__item input:focus {
+  border: 2px solid #23ae92;
+}
+
+.main .section-form__checkBox {
+  margin-top: 15px;
+}
+
+.main .section-form__checkBox label {
+  color: #fbf6e4;
+  font-size: 13px;
+  font-weight: 700;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.main .section-form__button {
+  background-color: #23ae92;
+  width: 100%;
+  height: 42px;
+  margin-top: 40px;
+  color: #fbf6e4;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.main .section-form__button.join {
+  margin-top: 25px;
+}
+
+.main .section-form__forgotPassword {
+  margin-top: 30px;
+  display: block;
+  font-family: "Quicksand", sans-serif;
+  color: #9894c5;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.main .section-form__forgotPassword:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  background-color: rgba(150, 193, 218, 0.15);
+  width: 114px;
+  height: 1px;
+}
