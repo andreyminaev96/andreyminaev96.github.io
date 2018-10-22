@@ -1,67 +1,86 @@
-//1
-const products = [
-    {title: 'prod1', price: 5.2}, {title: 'prod2', price: 0.18},
-    {title: 'prod3', price: 15}, {title: 'prod4', price: 25},
-    {title: 'prod5', price: 18.9}, {title: 'prod6', price:8},
-    {title: 'prod7', price: 19}, {title: 'prod8', price:63},
-];
+//1 DOM
+/**
+ * isParent - Функцыя которая принимает 2 елемента и проверяет является ли первый елемент родителем для второго
+ * @param (string) parent - родительский елемент
+ * @param(string) child
+ */
 
-let fillterArr = filterArrStr(15);
+let isParent = (parent,child) => document.querySelector(`${child}`).closest(`${parent}`);
 
-function filterArrStr(price){
-    let arrNew = products.filter(num => num.price <= price);
-    arrNew.sort((prev,next)=> prev.price - next.price);
-    return arrNew
-}
+isParent('article','p');
+
 //2
-
-let arrOld = [1,2,3,5,8,9,10];
-
-let arrNew = arrOld.map(value => ({digit: value, odd : !!(value % 2)}));
+// --
 
 //3
 
-arrOld = [12,4,50,1,0,18,40];
-
-let arrRes = arrOld.every(value =>  value === 0);
+const ulSelector = document.querySelector('ul');
+    ulSelector.previousElementSibling;
+    ulSelector.nextElementSibling;
 
 //4
 
-arrOld = ['yes', 'hello', 'no', 'easycode', 'what'];
+const ulList = document.querySelectorAll('ul li');
+let listStr = ulList.length;
 
-arrRes = arrOld.some(value => value.length === 3 );
+// 1 nodes
 
-let arrChar = [{char:"a",index:12}, {char:"w",index:8}, {char:"Y",index:10}, {char:"p",index:3}, {char:"p",index:2},
-               {char:"N",index:6}, {char:" ",index:5}, {char:"y",index:4}, {char:"r",index:13}, {char:"H",index:0},
-               {char:"e",index:11}, {char:"a",index:1}, {char:" ",index:9}, {char:"!",index:14}, {char:"e",index:7}];
+ulSelector.classList.add("list");
 
-    let newArrCharSort = arrChar.sort((prev,next)=> prev.index - next.index);
-    let lenewArrCharStr = newArrCharSort.reduce((prev,item) => prev + item.char, "");
+// 2
+
+document.querySelector('span').nextElementSibling.id = 'link';
+
+// 3
+
+ulSelector.children[0].classList.add('item');
+ulSelector.children[2].classList.add('item');
+
+// 4
+
+const aSelect = document.querySelectorAll('a');
+
+aSelect.forEach(item => item.classList.add('custom-link'));
+
+// 1 манипуляцыя содержимЫм
+
+const liTemplate = `
+      <li class="new-item">item 4</li>
+      <li class="new-item">item 5</li>
+      `;
+
+ulSelector.insertAdjacentHTML("beforeend", liTemplate);
+
+// 2
+
+const strong1 =`<strong></strong>`;
+const strong2 =`<strong></strong>`;
+const strong3 =`<strong></strong>`;
+
+ulSelector.children[0].firstChild.insertAdjacentHTML("beforeend", strong1);
+ulSelector.children[1].firstChild.insertAdjacentHTML("beforeend", strong2);
+ulSelector.children[2].firstChild.insertAdjacentHTML("beforeend", strong3);
+
+// 3
+
+const imgSelector = `<img src="why-js.png">`;
+
+document.body.insertAdjacentHTML("beforebegin", imgSelector);
+
+// 4
+
+const elementMark = document.querySelector('p mark');
+
+elementMark.insertAdjacentText("beforeend", "green");
+elementMark.classList.add('green');
+
+//5
+// -
 
 
 
-let storage = {
-    current_todos: [],
-    deleted_todos: []
-};
 
 
 
-/**
- * edit_todo_item - функция для редактирования елемента
- * @param {string} id
- * @param {string} title - новый заголовое
-  * @param {string} text - новый текст необязательно
- */
-const edit_todo_item = (id,title,text) => {
 
-    if (!id) return console.log("Передайте id удаляемой задачи.");
-    if (!title) return console.log("Введите заголовок задачи.");
 
-    storage.current_todos = storage.current_todos.filter((todo) =>{
-        if (id !== todo.id){
-            todo.title = title
-        }
-    });
-    return storage.current_todos;
-};
