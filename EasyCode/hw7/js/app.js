@@ -32,6 +32,7 @@ ulSelector.classList.add("list");
 document.querySelector('span').nextElementSibling.id = 'link';
 
 // 3
+// ulList.forEach((item,index) => index + 1 % 2 === 0 ? item.classList.add('item') : '' ); == почему так неработает ? 
 
 ulSelector.children[0].classList.add('item');
 ulSelector.children[2].classList.add('item');
