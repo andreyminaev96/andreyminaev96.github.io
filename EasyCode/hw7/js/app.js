@@ -10,6 +10,7 @@ let isParent = (parent,child) => document.querySelector(`${child}`).closest(`${p
 isParent('article','p');
 
 //2
+
 // --
 
 //3
@@ -33,7 +34,7 @@ document.querySelector('span').nextElementSibling.id = 'link';
 
 // 3
 
-ulList.forEach((item,index) => (index + 1) % 2 === 0 ? item.classList.add('item') : item.classList.add('items') );
+ulList.forEach((item,index) => (index + 1) % 2 === 0 ? item.classList.add('item') : false ) ;
 
 // 4
 
