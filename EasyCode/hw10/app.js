@@ -1,130 +1,56 @@
-// * bind
-let user = {
-    name: "Denis",
-    age: 29,
-    // getName: function () {
-    //     console.log(this.name);
-    // },
-    getName() {
-        console.log(this.name);
-    },
-    getAge: function () {
-        console.log(this);
-        console.log(this.age);
-    }
-}
+// TODO Задачи по замыканию
 
-let user2 = {
-    name: "Ivan",
-    age: 33
-}
+// TODO Задачf 3
 
-// user.getAge();
+/**
+ * minus
+ * @param {number} numbFirst - первое число
+ * @param {number} numbSecond - второе число
+ */
 
-user.getAge = user.getAge.bind(user);
+function minus (numbFirst, numbSecond = 0) {
 
-// user.getAge.call(user2);
+    let i = 0;
 
-// setTimeout(user.getAge, 2000);
-
-// document.addEventListener("click", function(e) {
-//     console.log(this);
-// });
-
-// document.addEventListener("click", (e) => {
-//     console.log(this);
-// });
-
-let obj = {
-    info: "Some info",
-    setEvent: function () {
-        document.addEventListener("click", (e) => {
-            console.log(this);
-        });
-    }
-}
-
-// obj.setEvent();
-
-// closures
-
-// leGloba = {
-//     value: 10,
-//     text: "Hello",
-//     getName: function() {},
-//     scope: null
-// }
-
-let val = 10;
-let text = "Hello";
-
-function getName(name) {
-    // le1 = {
-    //     startText: "My name is ",
-    //     name: "Denis",
-    //     args: arguments,
-    //     getValue: function (value) {},
-    //     scope: leGloba
-    // }
-    let startText = "My name is ";
-
-    function getValue(value) {
-        // le2 = {
-        //     value: "more text",
-        //     args: arguments,
-        //     scope: le1
-        // }
-        return value + "some text";
+    function secondItem() {
+        return i = numbFirst - numbSecond
     }
 
-    return startText + name + getValue("more text");
+    return secondItem()
 }
 
-// getName("Denis");
+// TODO Задача 5
 
+/**
+* strModuls - модульная функцыя роботы со строкой
+* @param {string} value - название строки
+*/
+const strModuls = (function () {
+    let strValue = 0;
 
-function makeCounter() {
-    let counter = 0;
-
-    return function () {
-        return ++counter;
+    function setString(value) {
+        if (typeof value !== 'string') {return strValue = String(value);}
+        else { return strValue = value; }
     }
-}
 
-const counter1 = makeCounter();
-const counter2 = makeCounter();
+    function getString() {return  strValue}
 
-function getHello(text = "Hello ") {
-    return function(name) {
-        return text += name;
-    } 
-}
+    function setStrLength() {return strValue.length}
 
-// let hello = getHello();
+    return {
+        setString,
+        getString,
+        setStrLength
+    }
 
+}());
 
-// Modules
-// const counter = {
-//     i: 0,
-//     inc() {
-//         return ++this.i;
-//     }
-// }
+// TODO Задача 6
 
-
-// const counter = (function () {
-//     let i = 0;
-
-//     function inc() {
-//         return ++i;
-//     }
-
-//     return {
-//         inc
-//     }
-// }());
-
-
+/**
+ * strModuls - модульная функцыя роботы с числами (калькулятор)
+ * @param {number} val- число
+ */
 const calc = (function () {
     let value = 0;
 
@@ -142,24 +68,73 @@ const calc = (function () {
         return this;
     }
 
+    function multiplyValue(val) {
+        value *= val;
+        return this;
+    }
+
     return {
         setValue,
         getValue,
-        plusValue
+        plusValue,
+        multiplyValue
     }
 }());
 
 
+// TODO Задачи по this
+
+
+// TODO Задача 2
+
+
+function getPrice() {
+    return this.price * this.products
+}
+
+const priceAndGetroduct = {
+    price: 100,
+    products: 5,
+    getPriceProduct: getPrice
+};
+
+// TODO Задача 3
+
+const priceAndDetail = {
+    price: 10,
+    products: 3,
+    getPriceProduct: getPrice
+};
+
+// TODO Задача 4
+
+let size = {width: 5, height: 10},
+ getSquare = function () { return this.width * this.height};
+
+getSquare = getSquare.bind(size);
 
 
 
+// TODO Задача 6
+const element = {
+    height: '15px',
+    marginTop: '5px',
+    marginBottom: '5px',
+    getFullHeight (){
+        return parseInt(this.height) + parseInt(this.marginTop) + parseInt(this.marginBottom)
+    }
+};
 
+const block = {
+    height: '5px',
+    marginTop: '3px',
+    marginBottom: '3px',
+    getFullHeight() {
+        return parseInt(this.height) + parseInt(this.marginTop) + parseInt(this.marginBottom)
+    }
+};
 
-
-
-
-
-
+//7
 
 
 
