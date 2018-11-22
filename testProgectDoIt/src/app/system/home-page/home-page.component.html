@@ -1,0 +1,21 @@
+<div class="ui fluid action input">
+  <input type="text" [(ngModel)]="noteName">
+  <div class="ui button" (click)="addNote()">Оставить заметку</div>
+</div>
+
+<ul>
+  <li
+    class="ui tall stacked segment"
+    *ngFor="let coment of comments"
+  >
+    <p class="header">{{coment.id}}</p>
+    <p>{{coment.note}}</p>
+    <button
+      class="ui primary button"
+      (click)="deleteNote(coment)"
+    >
+      удалить заметку
+    </button>
+  </li>
+</ul>
+

@@ -1,0 +1,102 @@
+<form
+  class="ui form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h4 class="ui dividing header">Shipping Information</h4>
+  <div
+    class="field"
+    [ngClass]="{'error': form.get('email').invalid && form.get('email').touched}"
+  >
+    <label>Email</label>
+    <input
+      type="text"
+      name="email"
+      placeholder="email"
+      formControlName="email"
+    >
+    <span
+      class="ui error message"
+      *ngIf="form.get('email').invalid && form.get('email').touched "
+    >
+      <span *ngIf="form.get('email')['errors']['required']">email не может быть путым</span>
+      <span *ngIf="form.get('email')['errors']['email']">email не коректный</span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">Email уже занят</span>
+    </span>
+  </div>
+  <div
+    class="field"
+    [ngClass]="{'error': form.get('name').invalid && form.get('name').touched}"
+  >
+    <label>Name</label>
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      formControlName="name"
+    >
+    <span
+      class="ui error message"
+      *ngIf="form.get('name').invalid && form.get('name').touched "
+    >
+     Имя введенно не коректно
+    </span>
+  </div>
+  <div
+    class="field"
+    [ngClass]="{'error': form.get('password').invalid && form.get('password').touched}"
+  >
+    <label>Password</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      formControlName="password"
+    >
+    <span
+      class="ui error message"
+      *ngIf="form.get('password').invalid && form.get('password').touched "
+    >
+    <span *ngIf="form.get('password')['errors']['required']">Password не может быть путым</span>
+    <span *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+        Password должен быть меньше
+        {{ form.get('password')['errors']['minlength']['requiredLength'] }} символов.
+        Сейчас  {{ form.get('password')['errors']['minlength']['actualLength'] }}</span>
+    </span>
+  </div>
+  <div class="ui segment">
+    <div
+      class="field"
+      [ngClass]="{'error': form.get('agree').invalid && form.get('agree').touched}"
+    >
+      <div class="ui toggle checkbox">
+        <input
+          type="checkbox"
+          name="gift"
+          tabindex="0"
+          class="hidden"
+          formControlName="agree"
+        >
+        <label>Do not include a receipt in the package</label>
+        <span
+          class="ui error message"
+          *ngIf="form.get('agree').invalid && form.get('agree').touched "
+        >
+        вы дрлжны согласится с правилами
+      </span>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <p class="ui-text">
+      Уже есть акаунт?
+      <a [routerLink]="'/login'">Войти</a>
+    </p>
+  </div>
+  <button
+    class="ui button"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+  Submit</button>
+</form>

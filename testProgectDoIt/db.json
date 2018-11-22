@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "wfm@mail.ru",
+      "password": "12345678",
+      "name": "Администратор"
+    },
+    {
+      "email": "andrey.minaev.simba@gmail.com",
+      "password": "123qwezxcA",
+      "name": "andrey",
+      "id": 2
+    },
+    {
+      "email": "andrey.minaev1.simba@gmail.com",
+      "password": "123qwezxcA",
+      "name": "Генадий Михаил петрович",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in arcu in urna tristique hendrerit gravida eget neque. Aliquam bibendum facilisis ipsum quis luctus. Ut sed eleifend nisl. Fusce dictum metus purus, nec tristique nulla vulputate nec. In fermentum arcu ut ligula lobortis, sed condimentum massa rutrum. Nam gravida accumsan efficitur. In semper ultrices pellentesque. Nulla tincidunt rhoncus pharetra. Proin eget lacus lacus. Suspendisse ac risus posuere, sodales augue in, mattis ligula. Aenean pretium neque euismod tellus condimentum, eget egestas est bibendum. Sed ut neque nulla. Quisque ut dignissim risus, id convallis risus. Curabitur elementum magna libero, eget ullamcorper felis molestie nec. Sed efficitur nisi eros, in lobortis est molestie quis."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<agm-map
+  #map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoome"
+  [disableDefaultUI]="false"
+  [zoomControl]="false"
+  (mapClick)="addMarker($event)"
+>
+  <agm-marker
+    [latitude]="lat"
+    [longitude]="lng"
+    *ngIf="location"
+  >
+  </agm-marker>
+</agm-map>
+<button (click)="buttonPlas()">Приблизить карту</button>
+<button (click)="buttonMinus()">Уменьшить карту</button>

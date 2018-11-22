@@ -1,0 +1,66 @@
+<p class="ui-text">Страница входа</p>
+<div
+  class="ui {{message.type}} message"
+  *ngIf="message.text"
+>{{message.text}}
+</div>
+<form
+  class="ui form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmin()"
+>
+  <div
+    class="field"
+    [ngClass]="{'error': form.get('email').invalid && form.get('email').touched}"
+  >
+    <label>Email</label>
+    <input
+      type="text"
+      name="email"
+      placeholder="email"
+      formControlName="email"
+    >
+    <span
+      style="display: inline-block"
+      class="ui error message"
+      *ngIf="form.get('email').invalid && form.get('email').touched "
+    >
+      <span *ngIf="form.get('email')['errors']['required']">email не может быть путым</span>
+      <span *ngIf="form.get('email')['errors']['email']">email не коректный</span>
+    </span>
+  </div>
+  <div
+    class="field"
+    [ngClass]="{'error': form.get('password').invalid && form.get('password').touched}"
+  >
+    <label>Password</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      formControlName="password"
+    >
+    <div
+      class="ui error message"
+      *ngIf="form.get('password').invalid && form.get('password').touched "
+    >
+        <span *ngIf="form.get('password')['errors']['required']">Password не может быть путым</span>
+        <span *ngIf="form.get('password')['errors']['minlength']">
+          Password должен быть больше
+          {{ form.get('password')['errors']['minlength']['requiredLength'] }} символов.
+          Сейчас  {{ form.get('password')['errors']['minlength']['actualLength'] }}</span>
+       </div>
+  </div>
+  <div class="field">
+    <p class="ui-text">
+      Нет акаунта? <a [routerLink]="'/registration'">Зарегистрируйтесь</a>
+    </p>
+  </div>
+  <button
+    class="ui button"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Submit
+  </button>
+</form>
