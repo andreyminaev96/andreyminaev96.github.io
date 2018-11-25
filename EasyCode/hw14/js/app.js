@@ -7,7 +7,6 @@ const serchQueryParams = new NewsService(new CustomHttp());
 const countrySelect = document.querySelector(".country");
 const categorySelect = document.querySelector(".category");
 const formSubmit = document.querySelector("form");
-// console.log(formSubmit)
 
 const getCountryTechnolodyHandler = () => {
     const country = countrySelect.value;
@@ -22,24 +21,23 @@ const getCountryTechnolodyHandler = () => {
 
 };
 
-
-
 countrySelect.addEventListener("change", getCountryTechnolodyHandler);
 categorySelect.addEventListener("change", getCountryTechnolodyHandler);
+window.addEventListener("load", getCountryTechnolodyHandler);
+
 formSubmit.addEventListener("submit", e => {
     e.preventDefault();
     const resValue = e.target.firstElementChild.firstElementChild;
     if (resValue.value === "") return alert('Введите значения');
+
     serchQueryParams.handlerSearch((res) => {
-        // console.log(res)
         const { articles, totalResults } = res;
         newsUI.clearContainer();
-        if (totalResults === 0) {
-            return newsUI.errorMasseg()
-        }
+        if (totalResults === 0) return newsUI.errorMasseg();
         articles.forEach(news => newsUI.addNews(news));
     },resValue.value);
+
     resValue.value = "";
 });
 
-window.addEventListener("load", getCountryTechnolodyHandler);
+
