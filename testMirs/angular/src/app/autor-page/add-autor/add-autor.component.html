@@ -1,0 +1,105 @@
+<div class="col offset-l1 s12 l5">
+  <h5>Добавить Автора</h5>
+  <form
+    #form="ngForm" (ngSubmit)="onSubmit(form)"
+  >
+    <div class="row">
+      <div
+        class="input-field col s6"
+      >
+        <input
+          class="validate"
+          id="wfm_second_name"
+          type="text"
+          required
+          #name="ngModel"
+          name="name"
+          ngModel
+        >
+        <label for="wfm_second_name">Фамилия</label>
+        <span
+          *ngIf="name.invalid && name.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+      </div>
+      <div class="input-field col s6">
+        <input
+          id="wfm_first_name"
+          type="text"
+          class="validate"
+          ngModel
+          name="wfmFirstName"
+          #wfmFirstName="ngModel"
+          required
+        >
+        <span
+          *ngIf="wfmFirstName.invalid && wfmFirstName.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="wfm_first_name">Имя</label>
+      </div>
+      <div class="input-field col s12">
+        <input
+          id="wfm_last_name"
+          type="text"
+          class="validate"
+          ngModel
+          name="wfmLastName"
+          #wfmLastName="ngModel"
+        >
+        <label for="wfm_last_name">Очество</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="wfm_data"
+          type="date"
+          class="validate"
+          ngModel
+          name="wfmData"
+          #wfmData="ngModel"
+          required
+        >
+        <span
+          *ngIf="wfmData.invalid && wfmData.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле введено не коректно
+        </span>
+        <label for="wfm_data">Дата рождения </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="wfm_input_text"
+          type="text"
+          data-length="120"
+          ngModel
+          name="wfmInput"
+          #wfmInput="ngModel"
+        >
+        <label for="wfm_input_text">Список книг</label>
+      </div>
+    </div>
+    <div class="row">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          [disabled]="form.invalid"
+        >Добавить Атора
+        </button>
+    </div>
+
+  </form>
+</div>
+

@@ -1,0 +1,7 @@
+<section class="section" *ngIf="!isLoaded"> Loading ...</section>
+<section class="section" *ngIf="isLoaded">
+  <div class="row">
+    <app-add-book [autorInfo]="infoAutor" (onBookAdd)="newBookAdded($event)"></app-add-book>
+    <app-edit-book [autorName]="infoAutor" [bookName]="books" ></app-edit-book>
+  </div>
+</section>

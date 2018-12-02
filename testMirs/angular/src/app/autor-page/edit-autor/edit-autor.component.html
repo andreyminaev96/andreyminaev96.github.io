@@ -1,0 +1,134 @@
+<div class="col s12 l5 offset-l1">
+  <div
+    class="card-panel teal {{message.type}}-2"
+    *ngIf="message.text"
+  >{{message.text}}</div>
+  <h5>Редактировать/Удалить Автора</h5>
+  <form
+    #form="ngForm" (ngSubmit)="onSubmit(form)"
+    (change)="onAutorChange()"
+  >
+    <div class="input-field col s12">
+      <select
+        [(ngModel)]="currentAutorId"
+        [ngModelOptions]="{standalone: true}"
+      >
+        <option value="" disabled selected>Выберите Автора</option>
+        <option
+          *ngFor="let a of autor"
+          [value]="a.id"
+        >{{a.name}} {{a.firstname}} {{a.middleName}}
+        </option>
+      </select>
+      <label>Автор</label>
+    </div>
+    <div class="row">
+      <div
+        class="input-field col s6"
+      >
+        <input
+          class="validate"
+          id="edit_second_name"
+          type="text"
+          required
+          #editname="ngModel"
+          name="editname"
+          ngModel
+        >
+        <label for="edit_second_name">Фамилия</label>
+        <span
+          *ngIf="editname.invalid && editname.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+      </div>
+      <div class="input-field col s6">
+        <input
+          id="edit_first_name"
+          type="text"
+          class="validate"
+          ngModel
+          name="editFirstName"
+          #editFirstName="ngModel"
+          required
+        >
+        <span
+          *ngIf="editFirstName.invalid && editFirstName.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="edit_first_name">Имя</label>
+      </div>
+      <div class="input-field col s12">
+        <input
+          id="edit_last_name"
+          type="text"
+          class="validate"
+          ngModel
+          name="editLastName"
+          #editLastName="ngModel"
+        >
+        <label for="edit_last_name">Очество</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="edit_data"
+          type="date"
+          class="validate"
+          ngModel
+          name="editData"
+          #editmData="ngModel"
+          required
+        >
+        <span
+          *ngIf="editmData.invalid && editmData.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле введено не коректно
+        </span>
+        <label for="edit_data">Дата рождения </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="edit_input_text"
+          type="text"
+          data-length="120"
+          ngModel
+          name="wfmInput"
+          #wfmInput="ngModel"
+        >
+        <label for="edit_input_text">Список книг</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          class="btn waves-effect waves-light offset-s3"
+          type="submit"
+          name="action"
+          [disabled]="form.invalid"
+        >Редактировать
+        </button>
+      </div>
+      <div class="col">
+        <button
+          class="btn waves-effect waves-light offset-s3"
+          (click)="deleteAutor(form)"
+        >Удалить
+        </button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+

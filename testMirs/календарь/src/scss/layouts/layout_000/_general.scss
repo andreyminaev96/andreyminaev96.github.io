@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $baseFontSize;
+}
+
+body {
+
+  font: 13px $fontFamily $fontFamily ;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  .container{
+    max-width: 1000px;
+    position: relative;
+    .row{
+      padding: 0 51px;
+      width: 100%;
+    }
+  }
+
+
+.headtitle {
+  display: none
+}
+
+img {
+  vertical-align: top;
+}
+
+input{
+  outline: none;
+}

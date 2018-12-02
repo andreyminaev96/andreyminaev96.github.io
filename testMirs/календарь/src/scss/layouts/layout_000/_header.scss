@@ -1,0 +1,48 @@
+.header{
+  background: #f4f4f4;
+  border-bottom: 3px solid #d1d1d1;
+  padding: 55px 0 18px 0;
+  .row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include e(button){
+    min-width: 80px;
+    height: 30px;
+    color: white;
+    background: #0271c7;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    outline: none;
+    transition: ease-in-out .3s;
+    &:hover{
+      background: darkblue;
+    }
+  }
+
+  @include e(right-item){
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    i{
+      color: #b1b1b1;
+      margin-right: 8px;
+    }
+  }
+
+  @include e(input){
+    max-width: 200px;
+    width: 100%;
+    height: 28px;
+    border: 1px solid #bdbdbd;
+    padding: 0 7px;
+    font-size: 12px;
+    background: white;
+  }
+}
+.pl{
+  margin-left: 8px;
+}

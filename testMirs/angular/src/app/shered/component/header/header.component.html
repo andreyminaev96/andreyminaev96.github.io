@@ -1,0 +1,17 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['history']">История</a></li>
+      <li><a [routerLink]="['autors']">Дработа с Автором</a></li>
+      <li><a [routerLink]="['books']">Работа с Книгами</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <<li><a [routerLink]="['history']">История</a></li>
+  <li><a [routerLink]="['autors']">Записи</a></li>
+  <li><a [routerLink]="['books']">добавить книгу</a></li>
+</ul>

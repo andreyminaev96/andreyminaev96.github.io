@@ -1,0 +1,123 @@
+<div class="col s12 l5 offset-l1">
+  <div
+    class="card-panel teal {{message.type}}-2"
+    *ngIf="message.text"
+  >{{message.text}}</div>
+  <h5>Редактировать/Удалить Книгу</h5>
+  <form
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+    (change)="onBookChange()"
+    >
+    <div class="input-field col s12">
+      <select
+        required
+        #autorname
+        name="autorname"
+        [(ngModel)]="bookCurrentId"
+        [ngModelOptions]="{standalone: true}"
+      >
+        <option value="" disabled selected>Выберите название книги</option>
+        <option
+          *ngFor="let b of bookName"
+          [value]="b.id"
+        >{{b.namebook}}
+        </option>
+      </select>
+      <label>Название книги</label>
+    </div>
+    <div class="input-field col s12">
+      <select
+        required
+        #autorname
+        name="autorname"
+        ngModel
+      >
+        <option value="" disabled selected>Выберите Автора</option>
+        <option
+          *ngFor="let a of autorName"
+        >{{a.name}} {{a.firstname}} {{a.middleName}}
+        </option>
+      </select>
+      <label>Автор</label>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="e_name_book"
+          type="text"
+          class="validate"
+          #namebook="ngModel"
+          name="namebook"
+          ngModel
+          required
+        >
+        <span
+          *ngIf="namebook.invalid && namebook.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="e_name_book">Имя Книги</label>
+      </div>
+      <div class="input-field col s12">
+        <input
+          id="e_number_of_pages"
+          type="number"
+          class="validate"
+          #numberpage="ngModel"
+          name="numberpage"
+          ngModel
+          required
+          min="1"
+        >
+        <span
+          *ngIf="numberpage.invalid && numberpage.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="e_number_of_pages">Количество страниц</label>
+      </div>
+    </div>
+    <div class="input-field col s12">
+      <select
+        #genre="ngModel"
+        name="genre"
+        ngModel
+        required
+      >
+        <option value="" disabled selected>Выберите жанр</option>
+        <option
+          *ngFor="let g of genres"
+          [value]="g.type"
+        >{{g.label}}
+        </option>
+      </select>
+      <label>Жанр</label>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          [disabled]="f.invalid"
+        >Редактировать
+        </button>
+      </div>
+      <div class="col">
+        <button
+          class="btn waves-effect waves-light"
+          (click)="deleteBook(f)"
+        >Удалить
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+

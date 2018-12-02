@@ -1,0 +1,91 @@
+<div class="col offset-l1 s12 l5">
+  <h5>Добавить Книгу</h5>
+  <form
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+    >
+    <div class="input-field col s12">
+      <select
+        required
+        #autorname
+        name="autorname"
+        ngModel
+      >
+        <option value="" disabled selected>Веберите Автора Книги</option>
+        <option
+          *ngFor="let a of autorInfo"
+        > {{a.name}} {{a.firstname}} {{a.middleName}}
+        </option>
+      </select>
+      <label>Автор</label>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input
+          id="name_book"
+          type="text"
+          class="validate"
+          #namebook="ngModel"
+          name="namebook"
+          ngModel
+          required
+        >
+        <span
+          *ngIf="namebook.invalid && namebook.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="name_book">Имя Книги</label>
+      </div>
+      <div class="input-field col s12">
+        <input
+          id="number_of_pages"
+          type="number"
+          class="validate"
+          #numberpage="ngModel"
+          name="numberpage"
+          ngModel
+          required
+          min="1"
+        >
+        <span
+          *ngIf="numberpage.invalid && numberpage.touched"
+          class="helper-text"
+          data-success="right"
+        >
+          * Ето поле обезательно для заполнения
+        </span>
+        <label for="number_of_pages">Количество страниц</label>
+      </div>
+    </div>
+    <div class="input-field col s12">
+      <select
+        #genre="ngModel"
+        name="genre"
+        ngModel
+        required
+      >
+        <option value="" disabled selected>Выберите жанр книги</option>
+        <option
+          *ngFor="let g of genres"
+          [value]="g.type"
+        >{{g.label}}
+        </option>
+      </select>
+      <label>Жанр</label>
+    </div>
+    <div class="row">
+      <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+        [disabled]="f.invalid"
+      > Добавить книгу
+      </button>
+    </div>
+  </form>
+</div>
+
+

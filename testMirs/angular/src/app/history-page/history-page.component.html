@@ -1,0 +1,46 @@
+<section class="section" *ngIf="!isLoaded"></section>
+<section class="section" *ngIf="isLoaded">
+  <div class="row">
+    <div class="input-field col s12 m6">
+      <i class="material-icons prefix">mode_edit</i>
+      <input
+        [placeholder]="serchPlaceholder"
+        id="icon_prefix2"
+        class="materialize-textarea"
+        [(ngModel)]="serchValue"
+      >
+    </div>
+    <div class="input-field col s12 m4 l6">
+      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Пераметры фильтра</a>
+      <ul id='dropdown1' class='dropdown-content'>
+      <li><a (click)="changeCriteria('autorname')">Имя Автора</a></li>
+      <li><a (click)="changeCriteria('namebook')" >Имя Книги</a></li>
+      <li><a (click)="changeCriteria('genre')" >Жанр</a></li>
+      <li><a (click)="changeCriteria('numberpage')" >Страниц в книге</a></li>
+    </ul>
+    </div>
+  </div>
+  <table class="highlight centered responsive-table">
+    <thead>
+    <tr>
+      <th>Номер</th>
+      <th>Имя Aвтора</th>
+      <th>Имя Книги</th>
+      <th>Жанр</th>
+      <th>Страниц в книге</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let b of books | appFilter:serchValue:serchField; let idx = index">
+      <td>{{idx + 1}}</td>
+      <td>{{b.autorname}}</td>
+      <td>{{b.namebook}}</td>
+      <td>{{b.genre}}</td>
+      <td>{{b.numberpage}}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+

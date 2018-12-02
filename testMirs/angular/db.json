@@ -1,0 +1,66 @@
+{
+  "autor": [
+    {
+      "name": "Минаев",
+      "data": "2018-11-17",
+      "firstname": "Андрей",
+      "booklist": "нету",
+      "middleName": "Николаевич",
+      "id": 2
+    },
+    {
+      "name": "Минаев",
+      "data": "2018-12-08",
+      "firstname": "Николай",
+      "booklist": "нету",
+      "middleName": "Иванович",
+      "id": 3
+    },
+    {
+      "name": "Мельников",
+      "data": "2018-12-07",
+      "firstname": "Алексей",
+      "booklist": "",
+      "middleName": "Алексеевич",
+      "id": 4
+    },
+    {
+      "name": "Мишко",
+      "data": "2018-12-07",
+      "firstname": "Сергей",
+      "booklist": "нету",
+      "middleName": "Иванович",
+      "id": 5
+    }
+  ],
+  "books": [
+    {
+      "namebook": "Мег3",
+      "genre": "Документальная литература",
+      "autorname": "Минаев Николай Иванович",
+      "numberpage": 1232,
+      "id": 2
+    },
+    {
+      "namebook": "Дом  с Привидениями",
+      "genre": "Дом и семья",
+      "autorname": "Минаев Николай Иванович",
+      "numberpage": 123,
+      "id": 3
+    },
+    {
+      "namebook": "Кинг К",
+      "genre": "Деловая литература",
+      "autorname": "Мельников Алексей Алексеевич",
+      "numberpage": 123,
+      "id": 4
+    },
+    {
+      "namebook": "Робин Гуд",
+      "genre": "Поэзия",
+      "autorname": "Мишко Сергей Иванович",
+      "numberpage": 54,
+      "id": 5
+    }
+  ]
+}
