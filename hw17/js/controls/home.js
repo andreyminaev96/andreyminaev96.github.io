@@ -43,7 +43,6 @@ function onloadingPhoto(e) {
     if (inputUploadPhoto.files.length){
         const [newPhoto] = inputUploadPhoto.files;
         image.loadingPhoto(newPhoto)
-            .then(user.getInfo)
             .then(() => onLoad())
             .catch((error) => {
                 console.log(error);
@@ -61,8 +60,10 @@ function deletePhoto(e) {
             if (questionDelete) {
                 const imgId = imgWrap.dataset.imgId;
                 const imgUrl = imgSrce.currentSrc.split('/')[5];
-                image.removePhoto(imgId, imgUrl)
+                image.removePhoto(imgId, imgUrl);
             }
+            user.getInfo()
+            .then(() => onLoad())
 
     }
 
@@ -73,4 +74,4 @@ window.addEventListener("load", onLoad);
 inputCover.addEventListener("change", onCoverUpload);
 inputUploadPhoto.addEventListener("change", onloadingPhoto);
 elementRow.addEventListener('click', deletePhoto);
-// document.querySelector(".remove-wrap .d-flex";
+

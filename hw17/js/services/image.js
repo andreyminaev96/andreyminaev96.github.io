@@ -31,6 +31,7 @@ class ImageService {
                     image_url: `users-photos/${imgUrl}`
                  }),
                 headers: {
+                    "Content-type": "application/json",
                     "x-access-token": this._token
                 }
             })
